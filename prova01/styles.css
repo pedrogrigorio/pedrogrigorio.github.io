@@ -3,8 +3,12 @@ body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-button {
+button, a {
   all: unset;
+}
+
+ul {
+  padding: 0;
 }
 
 .container {
@@ -117,6 +121,7 @@ aside {
 }
 
 .sidemenu-list {
+  padding-left: 16px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -159,34 +164,34 @@ section {
 *   3.1. Loader
 * -------------------------- */
 
-/* coloca largura e altura, muda as cores, coloca borda, deixa a borda aredondada e mostra na tela */
-
-/* box-sizing: border-box  Serve para incluir a borda e o padding na width e no height, para não ter que fazer
-contas a parte dessas propriedades, ou seja, 48px já inclui o conteudo, as bordas e o padding */
-
-/* animation - "rotation" é o nome da animação, seguido da duração, a taxa em que ela atualiza, linear nesse caso, 
-e infinite para repetir para sempre */
-
 .loader {
+  /* coloca largura e altura, muda as cores, coloca borda, deixa a borda aredondada e mostra na tela */
   width: 48px;
   height: 48px;
   border: 5px solid #FFF;
   border-bottom-color: #FF3D00;
   border-radius: 50%;
   display: inline-block;
+
+  /* box-sizing: border-box  Serve para incluir a borda e o padding na width e no height, para não ter que fazer
+  contas a parte dessas propriedades, ou seja, 48px já inclui o conteudo, as bordas e o padding */
+
   box-sizing: border-box;
+
+  /* animation - "rotation" é o nome da animação, seguido da duração, a taxa em que ela atualiza, linear nesse caso, 
+  e infinite para repetir para sempre */
   animation: rotation 1s linear infinite;
   }
 
 /* aqui são os keyframes da animação, o ponto da animação que começamos e o ponto que terminamos. Com isso setado,
 a propriedade animation faz o resto do trabalho. */
 @keyframes rotation {
-0% {
+  0% {
     transform: rotate(0deg);
-}
-100% {
+  }
+  100% {
     transform: rotate(360deg);
-}
+  }
 } 
 
 
