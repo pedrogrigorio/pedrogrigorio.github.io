@@ -109,13 +109,11 @@ button {
 }
 
 aside {
-  position: fixed;
-  left: 0;
-  top: 0;
   width: 20vw;
   height: 1200px;
   /* height: 100%; */
   background-color: #181818;
+  padding-top: 80px;
 }
 
 .sidemenu-list {
@@ -138,8 +136,9 @@ aside {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 20vw;
+  /* margin-left: 20vw; */
   margin-top: 80px;
+  width: 80vw;
   height: 1200px;
 }
 
@@ -194,3 +193,22 @@ a propriedade animation faz o resto do trabalho. */
 /* =========================
 *   4. Media Queries
 * ========================== */
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+
+  aside {
+    display: flex;
+    justify-content: center;
+    height: auto;
+    width: 100%;
+    top: 80px;
+  }
+
+  .main_content {
+    margin-top: 0;
+  }
+}
+
