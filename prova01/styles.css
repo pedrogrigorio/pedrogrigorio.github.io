@@ -121,7 +121,7 @@ aside {
 }
 
 .sidemenu-list {
-  padding-left: 16px;
+  margin: 32px 0 0 16px;
   display: flex;
   flex-direction: column;
   gap: 16px;
