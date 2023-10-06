@@ -22,6 +22,9 @@ button {
 * ========================== */
 
 .navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
   background-color: black;
   color: white;
   height: 80px;
@@ -45,16 +48,19 @@ button {
   padding: 8px;
 }
 
-button {
+.navbar button {
   background-color: #04AA6D;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
   border: none;
+  padding: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 3px 7px 5px;
+  transition: transform 400ms, box-shadow 400ms;
 }
 
-.navbar li:hover button {
-  background-color: #3e8e41;
+.navbar button:active {
+  box-shadow: 2px 3px 1px;
+  transform: translate(4px, 6px);
 }
 
 /* 
@@ -84,21 +90,31 @@ button {
 
 .dropdown-content a:hover {background-color: #ddd;}
 
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown:active .dropdown-content {display: block;}
+
+/* apenas para manter o dropdown menu depois do clique */
+.dropdown-content:hover {display:block;}
 
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
+
+
 /* =========================
-*   2. Aside
+*   2. Menu Lateral
 * ========================== */
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
 
 aside {
   position: fixed;
-  z-index: 2;
-  top: 0;
   left: 0;
-  width: 300px;
-  height: 100vh;
+  top: 0;
+  width: 20vw;
+  height: 1200px;
+  /* height: 100%; */
   background-color: #181818;
 }
 
@@ -121,14 +137,60 @@ aside {
 .main_content {
   display: flex;
   flex-direction: column;
-  gap: 8px;
   align-items: center;
-  padding: 20px 60px;
-  margin-left: 300px;
+  margin-left: 20vw;
+  margin-top: 80px;
+  height: 1200px;
 }
 
 article {
-  background-color: white;
-  padding: 16px;
-  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 32px 16px;
 }
+
+section {
+  border: 1px solid black;
+  background-color: white;
+  padding: 8px 16px;
+}
+
+/* 
+*   3.1. Loader
+* -------------------------- */
+
+/* coloca largura e altura, muda as cores, coloca borda, deixa a borda aredondada e mostra na tela */
+
+/* box-sizing: border-box  Serve para incluir a borda e o padding na width e no height, para não ter que fazer
+contas a parte dessas propriedades, ou seja, 48px já inclui o conteudo, as bordas e o padding */
+
+/* animation - "rotation" é o nome da animação, seguido da duração, a taxa em que ela atualiza, linear nesse caso, 
+e infinite para repetir para sempre */
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #FFF;
+  border-bottom-color: #FF3D00;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  }
+
+/* aqui são os keyframes da animação, o ponto da animação que começamos e o ponto que terminamos. Com isso setado,
+a propriedade animation faz o resto do trabalho. */
+@keyframes rotation {
+0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(360deg);
+}
+} 
+
+
+/* =========================
+*   4. Media Queries
+* ========================== */
