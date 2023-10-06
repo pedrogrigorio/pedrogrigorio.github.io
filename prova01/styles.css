@@ -3,7 +3,7 @@ body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-button, a {
+button {
   all: unset;
 }
 
@@ -43,7 +43,6 @@ ul {
 }
 
 .navbar > nav > ul {
-  padding: 0;
   list-style: none;
   display: flex;
   gap: 8px;
